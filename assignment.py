@@ -7,7 +7,12 @@ def format_string(name, age):
     Returns:
         str: Formatted string
     """
-    pass
+    return f"My name is {name} and I am {age} years old"
+
+#the function format_string is passed its value to the variable format_message
+formatted_message = format_string("Alice",30)
+print(formatted_message)
+
 
 def conditional_check(number):
     """
@@ -17,7 +22,18 @@ def conditional_check(number):
     Returns:
         str: "Greater", "Lesser", or "Equal"
     """
-    pass
+    if number > 10:
+        return "Greater"
+    elif number < 10:
+        return "Lesser"
+    else:
+        return "Equal"
+    
+#the function is called for execution
+print(conditional_check(15))  # Output: "Greater"
+print(conditional_check(5))   # Output: "Lesser"
+print(conditional_check(10))  # Output: "Equal"
+
 
 def loop_sum(n):
     """
@@ -27,7 +43,13 @@ def loop_sum(n):
     Returns:
         int: Sum of numbers
     """
-    pass
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    return total
+
+print(loop_sum(5))  #total = (1 + 2 + 3 + 4 + 5)
+
 
 def list_operations(numbers):
     """
@@ -37,7 +59,15 @@ def list_operations(numbers):
     Returns:
         tuple: (sum, max, min)
     """
-    pass
+    total = sum(numbers)
+    maximum = max(numbers)
+    minimum = min(numbers)
+    return (total,maximum,minimum)
+
+numbers = [1,3,5,7,9] #defining the list of numbers
+result =  list_operations(numbers) #calling out function for execution
+print(result)
+
 
 def dict_operations(students_dict):
     """
@@ -47,7 +77,18 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    pass
+    # Use a list comprehension to filter students with scores > 80
+    return [name for name, score in students_dict.items() if score > 80]
+# dictionary of studenta names and score
+students = {
+    "John": 85,
+    "Alice": 90,
+    "Bob": 75,
+    "Eve": 95
+}
+result = dict_operations(students)
+print(result)
+
 
 def set_operations(list1, list2):
     """
@@ -58,7 +99,15 @@ def set_operations(list1, list2):
     Returns:
         set: Common elements
     """
-    pass
+    # Convert both lists to sets and find their intersection
+    return set(list1) & set(list2)
+
+list1 = [1, 2, 3]
+list2 = [2, 3, 4]
+result = set_operations(list1, list2)
+print(result)  
+
+
 
 def arithmetic_ops(a, b):
     """
@@ -69,7 +118,15 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    pass
+    return {
+    "sum": a + b,
+    "difference": a - b,
+    "product": a * b,
+    "quotient": a / b if b != 0 else None,  # Handle division by zero
+    }
+result = arithmetic_ops(10, 5)
+print(result)
+
 
 def logical_ops(x, y):
     """
@@ -80,7 +137,15 @@ def logical_ops(x, y):
     Returns:
         dict: Results of logical operations
     """
-    pass
+    return {
+        "and": x and y,       
+        "or": x or y,         # Logical OR
+        "not_x": not x,       
+        "not_y": not y,          
+    }
+
+result = logical_ops(True, False)
+print(result)
 
 def bitwise_ops(a, b):
     """
@@ -91,4 +156,10 @@ def bitwise_ops(a, b):
     Returns:
         dict: Results of bitwise operations
     """
-    pass
+    return {
+        "and": a & b,          # Bitwise AND
+        "or": a | b,           # Bitwise OR
+        "xor": a ^ b,          # Bitwise XOR
+    }
+result = bitwise_ops(12, 10)
+print(result)
