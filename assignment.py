@@ -119,11 +119,10 @@ def arithmetic_ops(a, b):
         dict: Results of arithmetic operations
     """
     return {
-    "addition": a + b,
-    "subtraction": a - b,
-    "multiplication": a * b,
-    "division": a / b if b != 0 else None,  # Handle division by zero
-    "modulus": a % b if b != 0 else None
+    "sum": a + b,
+    "difference": a - b,
+    "product": a * b,
+    "quotient": a / b if b != 0 else None,  # Handle division by zero
     }
 result = arithmetic_ops(10, 5)
 print(result)
